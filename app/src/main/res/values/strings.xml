@@ -1,3 +1,66 @@
 <resources>
-    <string name="app_name">Wang-YI-Cloud Music</string>
+    <string name="app_name">仿网易云音乐</string>
+
+    <string name="discover_music">发现音乐</string>
+    <string name="my_music">我的音乐</string>
+    <string name="my_friends">朋友</string>
+    <string name="user_account">账号</string>
+
+    <string name="personal_recommendation">个性推荐</string>
+    <string name="song_list">歌单</string>
+    <string name="newsRadio_season">主播电台</string>
+    <string name="ranking_list">排行榜</string>
+
+    <string name="my_message">我的消息</string>
+
+    <string name="member_center">会员中心</string>
+    <string name="shopping_mall">商城</string>
+    <string name="online_music">在线听歌免流量</string>
+
+    <string name="setting">设置</string>
+    <string name="scan">扫一扫</string>
+    <string name="change_theme_skin">主题换肤</string>
+    <string name="night_mode">夜间模式</string>
+    <string name="addin_timer">定时关闭</string>
+    <string name="music_alarm_clock">音乐闹钟</string>
+    <string name="driving_pattern">驾驶模式</string>
+
+    <string name="share_app">分享网易云音乐</string>
+    <string name="about">关于</string>
+
+    <string name="log_out">退出登陆</string>
+
+    <string name="dynamic">动态</string>
+    <string name="attention">关注</string>
+    <string name="fans">粉丝</string>
+    <string name="my_information">我的资料</string>
+
+    <string name="more">更多</string>
+
+    <string name="favorites">收藏</string>
+
+    <string name="empty">清空</string>
+
+    <string name="single_cycle">单曲循环</string>
+    <string name="random_play">随机播放</string>
+    <string name="list_cycle">列表循环</string>
+
+    <string name="share_by_cloud">分享到云音乐</string>
+    <string name="share_private_message">私信分享</string>
+    <string name="share_by_wechatOrQQ">微信、QQ分享</string>
+    <string name="copy_link">复制链接</string>
+
+    <string name="search_music_word">搜索音乐、歌词、电台</string>
+
+    <string name="download_music">下载音乐</string>
+    <string name="recent_played_songs">最近播放</string>
+    <string name="my_singer">我的歌手</string>
+    <string name="my_mv">我的MV</string>
+
+    <string name="my_create_play_lists">我创建的歌单</string>
+    <string name="my_favorites_play_lists">我收藏的歌单</string>
+
+
+
+
 </resources>
