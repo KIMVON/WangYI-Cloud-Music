@@ -46,7 +46,10 @@ public class ActivityUtils {
         transaction.commit();
     }
 
-
+    /**
+     * 获取AppRepository
+     * @return
+     */
     public static AppRepository getAppRepository(){
         return AppRepository.getInstance(LocalDataSource.getInstance() ,
                 RemoteDataSource.getInstance());

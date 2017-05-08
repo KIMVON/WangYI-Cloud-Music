@@ -5,5 +5,7 @@ package com.example.wang_yi_cloudmusic;
  */
 
 public interface BasePresenter {
-    void onStart();
+    void subscribe();
+
+    void unsubscribe();
 }

@@ -13,10 +13,12 @@ import rx.Observable;
 
 public interface DataSource {
 
-    Observable<Music> getSong(String id);
+    Observable<Music> getMusic(int id);
 
-    Observable<SongList> getSongList(String id);
+    Observable<SongList> getSongList(int id);
 
-    Observable<SongWord> getSongWord(String id);
+    Observable<SongWord> getSongWord(int id);
+
+    void saveMusic(Music music);
 
 }

@@ -1,19 +1,24 @@
 package com.example.wang_yi_cloudmusic.model.bean;
 
-import android.provider.MediaStore;
 
+import com.google.gson.annotations.SerializedName;
+
+import org.litepal.crud.DataSupport;
+
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by 79069 on 2017/4/29.
  */
 
-public class Music {
+public class Music extends DataSupport {
     private int musicId;
 
     private String musicName;
 
-    private List<Artist> musicArtists;
+    //表的关联，多对多
+    private List<Artist> musicArtists = new ArrayList<>();
 
     private String musicURL;
 
@@ -59,36 +64,9 @@ public class Music {
         this.code = code;
     }
 
-    public static class Artist{
-        private String artistName;
 
-        private int artistId;
-
-        private String artistImage;
-
-        public String getArtistName() {
-            return artistName;
-        }
-
-        public void setArtistName(String artistName) {
-            this.artistName = artistName;
-        }
-
-        public int getArtistId() {
-            return artistId;
-        }
-
-        public void setArtistId(int artistId) {
-            this.artistId = artistId;
-        }
-
-        public String getArtistImage() {
-            return artistImage;
-        }
-
-        public void setArtistImage(String artistImage) {
-            this.artistImage = artistImage;
-        }
-    }
+//    public static class Artist{
+//
+//    }
 
 }

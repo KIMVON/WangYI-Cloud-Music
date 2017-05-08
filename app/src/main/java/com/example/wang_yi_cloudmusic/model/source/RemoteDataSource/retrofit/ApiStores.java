@@ -19,7 +19,7 @@ public interface ApiStores {
      * @return
      */
     @GET("api/song/lyric?os=pc&lv=-1&kv=-1&tv=-1")
-    Observable<SongWord> getSongWord(@Query("id")String id);
+    Observable<SongWord> getSongWord(@Query("id")int id);
 
     /**
      * 获取歌单
@@ -27,7 +27,7 @@ public interface ApiStores {
      * @return
      */
     @GET("api/playlist/detail?&updateTime=-1")
-    Observable<SongList> getSongList(@Query("id")String id);
+    Observable<SongList> getSongList(@Query("id")int id);
 
 
     /**
@@ -36,7 +36,7 @@ public interface ApiStores {
      * @return
      */
     @GET("api/song/detail/?ids=%5B28377211%5D")
-    Observable<Song> getSong(@Query("id")String id);
+    Observable<Song> getSong(@Query("id")int id);
 
 
 }

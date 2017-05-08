@@ -1,6 +1,7 @@
 package com.example.wang_yi_cloudmusic.util;
 
 import android.database.Cursor;
+import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Environment;
 import android.provider.MediaStore;
@@ -21,6 +22,10 @@ import static android.content.ContentValues.TAG;
 
 public class MusicUtils {
     private static Set<Music> sMusicSet = new HashSet<>();
+
+    public static Set<Music> getMusicSet() {
+        return sMusicSet;
+    }
 
 
     /**
@@ -66,9 +71,9 @@ public class MusicUtils {
 
         Music music = null;
 
-        for(cursor.moveToFirst(); !cursor.isAfterLast() ; cursor.moveToNext()) {
+        for (cursor.moveToFirst(); !cursor.isAfterLast(); cursor.moveToNext()) {
             String isMusic = cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Audio.Media.IS_MUSIC));
-            if (isMusic.equals("") && isMusic != null){
+            if (isMusic.equals("") && isMusic != null) {
                 continue;
             }
 
@@ -86,5 +91,6 @@ public class MusicUtils {
 
         cursor.close();
     }
+
 
 }

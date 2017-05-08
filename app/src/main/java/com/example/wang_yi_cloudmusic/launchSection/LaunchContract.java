@@ -14,7 +14,7 @@ public interface LaunchContract {
     }
 
     interface View extends BaseView<Presenter>{
-
+        void finishActivity();
 
     }
 }
