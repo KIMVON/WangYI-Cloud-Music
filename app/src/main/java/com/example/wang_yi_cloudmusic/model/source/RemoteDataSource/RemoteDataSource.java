@@ -50,6 +50,7 @@ public class RemoteDataSource implements DataSource {
 
     /**
      * 通过ID获取歌曲，并解析为music
+     *
      * @param id
      * @return
      */
@@ -75,7 +76,6 @@ public class RemoteDataSource implements DataSource {
                             artistList.add(artist);
                         }
 
-//                        music.setMusicArtists(artistList);
                         music.setMusicName(song.getSongs().get(0).getName());
                         music.setMusicURL(song.getSongs().get(0).getMp3Url());
 

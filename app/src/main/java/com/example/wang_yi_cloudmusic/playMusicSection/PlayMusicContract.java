@@ -12,18 +12,33 @@ public interface PlayMusicContract {
     interface Presenter extends BasePresenter {
         void startOrPausePlaying();
 
+        void skipProgress(int msec);
+
         void initMusicSource();
     }
 
 
     interface View extends BaseView<Presenter>{
-//        void isPlayingMusic();
 
         void playOrPauseMusic();
+
+        void startDiskNeedleAnimation();
+
+        void endDiskNeedleAnimation();
 
         void initToolbar();
 
         void showSingerHearImage(String url);
+
+        void setMusicCurrentTime(int time);
+
+        void setMusicAllTime(int time);
+
+        void setProgressSchedule(int schedule);
+
+        void switchBtnIcon(boolean isPlaying);
+
+        void setIsPlayingBoolean();
 
         void finishActivity();
     }

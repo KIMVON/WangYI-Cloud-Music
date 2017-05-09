@@ -20,13 +20,15 @@ import static android.content.ContentValues.TAG;
 
 public class AppService extends Service {
 
-    public static Intent newIntent(Context context){
+    public static Intent newIntent(Context context) {
 
-        Intent intent = new Intent(context , AppService.class);
+        Intent intent = new Intent(context, AppService.class);
 
         return intent;
     }
 
+
+    private static final int MAX_PROGRESS = 100;
 
     private static MediaPlayer sMediaPlayer;
 
@@ -84,7 +86,7 @@ public class AppService extends Service {
     /**
      * 暂停播放
      */
-    private void pause(){
+    private void pause() {
         sMediaPlayer.pause();
     }
 
@@ -92,11 +94,11 @@ public class AppService extends Service {
     /**
      * 开始或暂停播放
      */
-    public void playOrPauseMusic(){
-        if (sMediaPlayer.isPlaying()){
+    public void playOrPauseMusic() {
+        if (sMediaPlayer.isPlaying()) {
             Log.d(TAG, "playOrPauseMusic: pause");
             pause();
-        }else {
+        } else {
             Log.d(TAG, "playOrPauseMusic: play");
             play();
         }
@@ -115,6 +117,64 @@ public class AppService extends Service {
         }
     }
 
+    /**
+     * 获取当前进度时间
+     * @return
+     */
+    public int getCurrentTime() {
+        if (sMediaPlayer != null) {
+            return sMediaPlayer.getCurrentPosition();
+        } else {
+            return 0;
+        }
+    }
+
+    /**
+     * 获取音乐总时间
+     *
+     * @return
+     */
+    public int getMusicAllTime() {
+        if (sMediaPlayer != null) {
+            return sMediaPlayer.getDuration();
+        } else {
+            return -1;
+        }
+    }
+
+    /**
+     * 获取音乐进度
+     *
+     * @return
+     */
+    public int getMusicProgressSchedule() {
+        int position = sMediaPlayer.getCurrentPosition();
+        int duration = sMediaPlayer.getDuration();
+        int pos = 0;
+        if (duration > 0) {
+            pos = position * MAX_PROGRESS / duration;
+        }
+
+        return pos;
+    }
+
+    /**
+     * 跳转到指定的地方，通过拖拽
+     * @param progress
+     */
+    public void skipAppointProgress(int progress){
+        sMediaPlayer.seekTo(progress);
+    }
+
+    /**
+     * 是否正在播放
+     *
+     * @return
+     */
+    public boolean isPlaying() {
+        return sMediaPlayer.isPlaying();
+    }
+
 
     @Override
     public void onDestroy() {
@@ -129,12 +189,11 @@ public class AppService extends Service {
     }
 
 
-    public class MusicBinder extends Binder{
+    public class MusicBinder extends Binder {
         //返回Service
-        public Service getService(){
+        public Service getService() {
             return AppService.this;
         }
-
 
     }
 }
