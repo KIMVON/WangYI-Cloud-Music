@@ -17,7 +17,7 @@ public class AppTransformerUtil {
     /**
      * 转线程
      */
-    public static class MusicTransformer implements Observable.Transformer<Music , Music>{
+    public static class IOMainThreadTransformer implements Observable.Transformer<Music , Music>{
 
         @Override
         public Observable<Music> call(Observable<Music> musicObservable) {

@@ -124,6 +124,7 @@ public class PlayMusicPresenter implements PlayMusicContract.Presenter {
         mService.playOrPauseMusic();
     }
 
+
     /**
      * 跳转到手指拖拽到的地方
      *
@@ -136,6 +137,7 @@ public class PlayMusicPresenter implements PlayMusicContract.Presenter {
         mService.skipAppointProgress(pos);
     }
 
+
     /**
      * 初始化Music的URL
      */
@@ -143,7 +145,7 @@ public class PlayMusicPresenter implements PlayMusicContract.Presenter {
     public void initMusicSource() {
         int id = 28377211;
         mAppRepository.getMusic(id)
-                .compose(new AppTransformerUtil.MusicTransformer())
+                .compose(new AppTransformerUtil.IOMainThreadTransformer())
                 .subscribe(new Subscriber<Music>() {
                     @Override
                     public void onCompleted() {
